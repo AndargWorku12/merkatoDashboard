@@ -42,8 +42,6 @@ const Signup = () => {
             background="bg.surface"
             boxShadow="md"
             borderRadius="xl"
-            bgColor="rgb(100,100,100)"
-           
           >
             <Flex className="showcase-18936vg" direction="column" gap="8">
               <Flex align="center" direction="column" gap="6">
