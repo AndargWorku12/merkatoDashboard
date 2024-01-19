@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/catgory.css'
+
 interface Category {
   id: number;
   name: string;

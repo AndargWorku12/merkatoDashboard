@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
- import '../style/products.css'
+ 
 
 interface Product {
   id: number;
@@ -13,7 +13,7 @@ interface ProductProps {
   onUpdate: (id: number, newName: string) => void;
 }
 
-const Products: React.FC<ProductProps> = ({
+const ProductComponent: React.FC<ProductProps> = ({
   products,
   onCreate,
   onDelete,
@@ -69,4 +69,4 @@ const Products: React.FC<ProductProps> = ({
   );
 };
 
-export default Products;
+export default ProductComponent;

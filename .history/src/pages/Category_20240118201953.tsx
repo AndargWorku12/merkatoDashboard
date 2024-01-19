@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/catgory.css'
+
 interface Category {
   id: number;
   name: string;
@@ -12,7 +12,7 @@ interface CategoryProps {
   onUpdate: (id: number, newName: string) => void;
 }
 
-const Category: React.FC<CategoryProps> = ({
+const CategoryComponent: React.FC<CategoryProps> = ({
   categories,
   onCreate,
   onDelete,
@@ -66,4 +66,4 @@ const Category: React.FC<CategoryProps> = ({
   );
 };
 
-export default Category;
+export default CategoryComponent;

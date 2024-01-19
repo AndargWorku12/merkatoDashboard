@@ -3,11 +3,10 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Analytics from "./pages/Analytics";
 import Dashboard from "./pages/Dashboard";
-import Login from ".pages/login/Login"
-import Products from "./pages/Products";
+import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Category from "./pages/Category";
-
+import Product from "./pages/Product";
 import Orders from "./pages/Orders";
 import ShopCard from "./pages/ShopCard";
 import CustemerReview from "./pages/CustemerReview";
@@ -23,7 +22,7 @@ function App() {
         <Route path="/category" element={<Category />} />
         <Route path="/review" element={<CustemerReview />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/product" element={<Products />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/shop" element={<ShopCard />} />
       </Routes>
     </BrowserRouter>

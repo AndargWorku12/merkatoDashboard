@@ -4,7 +4,7 @@ interface AnalyticsProps {
   salesData: number[];
 }
 
-const Analytics: React.FC<AnalyticsProps> = ({ salesData }) => {
+const AnalyticsPage: React.FC<AnalyticsProps> = ({ salesData }) => {
   const containerStyle: React.CSSProperties = {
     textAlign: 'center',
     padding: '20px',
@@ -36,4 +36,4 @@ const Analytics: React.FC<AnalyticsProps> = ({ salesData }) => {
   );
 };
 
-export default Analytics;
+export default AnalyticsPage;

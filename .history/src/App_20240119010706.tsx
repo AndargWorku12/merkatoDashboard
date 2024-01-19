@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Analytics from "./pages/Analytics";
 import Dashboard from "./pages/Dashboard";
-import Login from ".pages/login/Login"
+import Login from "./pages/login/Login"
 import Products from "./pages/Products";
 import Signup from "./pages/Signup";
 import Category from "./pages/Category";

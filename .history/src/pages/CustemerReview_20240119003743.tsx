@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/review.css'
+
 interface Review {
   id: number;
   username: string;

@@ -17,7 +17,7 @@ interface OrderProps {
   orders: Order[];
 }
 
-const Orders: React.FC<OrderProps> = ({ orders }) => {
+const OrderComponent: React.FC<OrderProps> = ({ orders }) => {
   return (
     <div>
       <h2>Order History</h2>
@@ -45,4 +45,4 @@ const Orders: React.FC<OrderProps> = ({ orders }) => {
   );
 };
 
-export default Orders;
+export default OrderComponent;
