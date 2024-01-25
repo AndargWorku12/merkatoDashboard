@@ -29,7 +29,6 @@ type Product = {
   id: string;
   name: string;
   price: number;
-  image:string;
 };
 
 type Order = {
@@ -89,43 +88,17 @@ const App: React.FC = () => {
 // for the product page to handle
   const [products, setProducts] = useState<Product[]>([
 
-    {
-      id: '1',
-      name: 'Laptop',
-      price: 999,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-    {
-      id: '2',
-      name: 'Smartphone',
-      price: 599,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-    {
-      id: '3',
-      name: 'Headphones',
-      price: 79,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-    {
-      id: '4',
-      name: 'Smartwatch',
-      price: 149,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-    {
-      id: '5',
-      name: 'Camera',
-      price: 799,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-    {
-      id: '6',
-      name: 'Tablet',
-      price: 349,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
-    },
-   
+
+    { id: '1', name: 'Product 1', price: 20 },
+    { id: '2', name: 'Product 2', price: 25 },
+    { id: '3', name: 'Product 3', price: 30 },
+    { id: '4', name: 'Product 4', price: 15 },
+    { id: '5', name: 'Product 5', price: 40 },
+    { id: '6', name: 'Product 6', price: 22 },
+    { id: '7', name: 'Product 7', price: 18 },
+    { id: '8', name: 'Product 8', price: 27 },
+    { id: '9', name: 'Product 9', price: 35 },
+    { id: '10', name: 'Product 10', price: 28 },
   ]);
 
   // Function to handle creating a new product

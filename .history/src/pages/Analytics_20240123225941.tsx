@@ -22,7 +22,6 @@ const Analytics: React.FC<AnalyticsProps> = ({ saleData }) => {
     height: '300px',
     marginTop: '20px',
     gap:'12px',
-    border:'3px solid red',
   };
 
   const barStyle: React.CSSProperties = {

@@ -93,37 +93,37 @@ const App: React.FC = () => {
       id: '1',
       name: 'Laptop',
       price: 999,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'laptop-image-url',
     },
     {
       id: '2',
       name: 'Smartphone',
       price: 599,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'C:\Users\Andarg\Pictures\evl\hero-img1.png',
     },
     {
       id: '3',
       name: 'Headphones',
       price: 79,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'C:\Users\Andarg\Pictures\evl\hero-img1.png',
     },
     {
       id: '4',
       name: 'Smartwatch',
       price: 149,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'C:\Users\Andarg\Pictures\evl\hero-img1.png',
     },
     {
       id: '5',
       name: 'Camera',
       price: 799,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'C:\Users\Andarg\Pictures\evl\hero-img1.png',
     },
     {
       id: '6',
       name: 'Tablet',
       price: 349,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'C:\Users\Andarg\Pictures\evl\hero-img1.png',
     },
    
   ]);

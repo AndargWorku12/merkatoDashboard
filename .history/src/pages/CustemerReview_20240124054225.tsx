@@ -16,8 +16,7 @@ const CustomerReview: React.FC<ReviewProps> = ({ username, joinedDate, reviewDat
       <p className="text-2xl">Customer reviews </p>
     <article className="max-w-xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-md shadow-md">
       <div className="flex items-center mb-4">
-        <img className="w-10 h-10 me-4 rounded-full" 
-        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        <img className="w-10 h-10 me-4 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="" />
         <div className="font-medium dark:text-white">
           <p>
             {username} <time dateTime={joinedDate} className="block text-sm text-gray-500 dark:text-gray-400">
@@ -76,7 +75,7 @@ const CustomerReview: React.FC<ReviewProps> = ({ username, joinedDate, reviewDat
     <article className="max-w-xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-md shadow-md">
       <div className="flex items-center mb-4">
         <img className="w-10 h-10 me-4 rounded-full" 
-        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        src="../assets/t-shirt.png" alt="" />
         <div className="font-medium dark:text-white">
           <p>
             {username} <time dateTime={joinedDate} className="block text-sm text-gray-500 dark:text-gray-400">

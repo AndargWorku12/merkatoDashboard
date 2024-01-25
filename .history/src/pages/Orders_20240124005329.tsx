@@ -69,7 +69,7 @@ const Orders: React.FC<OrderProps> = ({ orders, onCreateOrder, onDeleteOrder, on
           {orders.map((order) => (
             <tr key={order.id} className="border-b">
               <td className="py-2 px-4 border-r">{order.id}</td>
-              <td className="py-2 px-4 border-r">{order.product ? order.product.name : 'N/A'}</td>
+              <td className="py-2 px-4 border-r">{order.product.name}</td>
               <td className="py-2 px-4 border-r">{order.quantity}</td>
               <td className="py-2 px-4">${order.totalPrice.toFixed(2)}</td>
               <td className="py-2 px-4">
@@ -104,15 +104,7 @@ const Orders: React.FC<OrderProps> = ({ orders, onCreateOrder, onDeleteOrder, on
             className="border p-2"
           />
         </div>
-        <div className="flex items-center mt-2">
-          <label className="mr-2">Image URL:</label>
-          <input
-            type="text"
-            value={newOrder.product.image}
-            onChange={(e) => setNewOrder({ ...newOrder, product: { ...newOrder.product, image: e.target.value } })}
-            className="border p-2"
-          />
-        </div>
+        {/* Add more input fields for other order details if needed */}
         <button onClick={handleCreateOrder} className="bg-green-500 text-white py-2 px-4 mt-2">
           Create Order
         </button>

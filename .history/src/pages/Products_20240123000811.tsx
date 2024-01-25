@@ -6,7 +6,6 @@ interface Product {
   id: string;
   name: string;
   price: number;
-  image: string; // Add image property
 }
 
 // Define the properties that the Products component expects
@@ -27,7 +26,6 @@ const Products: React.FC<ProductProps> = ({
   // State for handling new product input
   const [newProductName, setNewProductName] = useState<string>('');
   const [newProductPrice, setNewProductPrice] = useState<number>(0);
-  const [newProductImage, setNewProductImage] = useState<string>(''); // State for image
 
   // Function to handle creating a new product
   const handleCreate = () => {
@@ -35,12 +33,10 @@ const Products: React.FC<ProductProps> = ({
       id: String(products.length + 1), // Ensure id is a string
       name: newProductName,
       price: newProductPrice,
-      image: newProductImage, // Set the image property
     };
     onCreate(newProduct);
     setNewProductName('');
     setNewProductPrice(0);
-    setNewProductImage('');
   };
 
   // Function to handle deleting a product
@@ -61,7 +57,6 @@ const Products: React.FC<ProductProps> = ({
       <table className="w-full border">
         <thead>
           <tr className="bg-gray-200">
-            <th className="py-2 px-4 border-b border-r font-bold">Image</th>
             <th className="py-2 px-4 border-b border-r font-bold">Name</th>
             <th className="py-2 px-4 border-b border-r font-bold">Price</th>
             <th className="py-2 px-4 border-b font-bold">Actions</th>
@@ -72,9 +67,6 @@ const Products: React.FC<ProductProps> = ({
           {products.map((product) => (
             // Each product row
             <tr key={product.id} className="border-b">
-              <td className="py-2 px-4 border-r">
-                <img src={product.image} alt={product.name} className="w-10 h-10" />
-              </td>
               <td className="py-2 px-4 border-r">{product.name}</td>
               <td className="py-2 px-4 border-r">{product.price}</td>
               <td className="py-2 px-4 flex items-center space-x-1">
@@ -118,21 +110,12 @@ const Products: React.FC<ProductProps> = ({
           value={newProductName}
           onChange={(e) => setNewProductName(e.target.value)}
           className="py-1 px-2 border font-bold"
-          placeholder="Product Name"
         />
         <input
           type="number"
           value={newProductPrice}
           onChange={(e) => setNewProductPrice(Number(e.target.value))}
           className="py-1 px-2 border font-bold"
-          placeholder="Product Price"
-        />
-        <input
-          type="text"
-          value={newProductImage}
-          onChange={(e) => setNewProductImage(e.target.value)}
-          className="py-1 px-2 border font-bold"
-          placeholder="Image URL"
         />
         {/* Button to create a new product */}
         <button

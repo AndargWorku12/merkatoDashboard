@@ -28,7 +28,7 @@ const ShopCard = () => {
           <div className="relative">
             <a href="#">
               <img
-                className="w-full h-60"
+                className="w-full"
                 src="https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp"
                 alt="Sunset in the mountains"
               />
@@ -48,9 +48,8 @@ const ShopCard = () => {
               Best T-shirt
             </a>
             <p className="text-gray-500 text-sm">
-            A T-shirt is a short-sleeved casual top typically made of cotton or a cotton blend. 
-            It has a simple design, featuring a round neckline and short sleeves, and it is characterized by its comfortable and versatile nature. T-shirts often display various graphics, images, or text, making them a popular form of self-expression and a canvas for personal style. 
-           
+            A T-shirt is a short-sleeved casual top typically made of cotton or a cotton blend. It has a simple design, featuring a round neckline and short sleeves, and it is characterized by its comfortable and versatile nature. T-shirts often display various graphics, images, or text, making them a popular form of self-expression and a canvas for personal style. 
+            They are widely worn as everyday clothing and come in various colors, patterns, and styles to suit individual preferences.
             </p>
           </div>
           <div className="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
@@ -97,11 +96,13 @@ const ShopCard = () => {
             </a>
           </div>
         </div>
+
+        {/* CARD 2 */}
         <div className="rounded overflow-hidden shadow-lg flex flex-col">
           <div className="relative">
             <a href="#">
               <img
-                className="w-full h-60"
+                className="w-full"
                 src="https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp"
                 alt="Sunset in the mountains"
               />
@@ -118,12 +119,11 @@ const ShopCard = () => {
               href="#"
               className="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
             >
-              Best T-shirt
+              Amazing T-shirt
             </a>
             <p className="text-gray-500 text-sm">
-            A T-shirt is a short-sleeved casual top typically made of cotton or a cotton blend. 
-            It has a simple design, featuring a round neckline and short sleeves, and it is characterized by its comfortable and versatile nature. T-shirts often display various graphics, images, or text, making them a popular form of self-expression and a canvas for personal style. 
-           
+            A T-shirt is a short-sleeved casual top typically made of cotton or a cotton blend.
+             It has a simple design, featuring a round neckline and short sleeves,   and relaxed attire
             </p>
           </div>
           <div className="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
@@ -146,7 +146,7 @@ const ShopCard = () => {
               >
                 {/* Your SVG path here */}
               </svg>
-              <span className="ml-1">6 mins ago</span>
+              <span className="ml-1">10 days ago</span>
             </a>
 
             <a
@@ -166,16 +166,16 @@ const ShopCard = () => {
                   d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
                 ></path>
               </svg>
-              <span className="ml-1">39 Comments</span>
+              <span className="ml-1">0 Comments</span>
             </a>
           </div>
         </div>
-
+          {/* Card-3 */}
         <div className="rounded overflow-hidden shadow-lg flex flex-col">
           <div className="relative">
             <a href="#">
               <img
-                className="w-full h-60"
+                className="w-full"
                 src="https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp"
                 alt="Sunset in the mountains"
               />
@@ -192,12 +192,10 @@ const ShopCard = () => {
               href="#"
               className="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
             >
-              Best T-shirt
+              simple T-shirt
             </a>
-            <p className="text-gray-500 text-sm">
-            A T-shirt is a short-sleeved casual top typically made of cotton or a cotton blend. 
-            It has a simple design, featuring a round neckline and short sleeves, and it is characterized by its comfortable and versatile nature. T-shirts often display various graphics, images, or text, making them a popular form of self-expression and a canvas for personal style. 
-           
+            <p className="text-gray-500 text-sm">T-shirts are valued for their ease of wear,
+             making them a staple in casual, sporty, and relaxed attire
             </p>
           </div>
           <div className="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
@@ -220,7 +218,7 @@ const ShopCard = () => {
               >
                 {/* Your SVG path here */}
               </svg>
-              <span className="ml-1">6 mins ago</span>
+              <span className="ml-1">10 days ago</span>
             </a>
 
             <a
@@ -240,12 +238,10 @@ const ShopCard = () => {
                   d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
                 ></path>
               </svg>
-              <span className="ml-1">39 Comments</span>
+              <span className="ml-1">0 Comments</span>
             </a>
           </div>
         </div>
-
-       
       </div>
     </div>
   )

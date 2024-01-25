@@ -13,6 +13,7 @@ import Products from './pages/Products';
 import ShopCard from './pages/ShopCard';
 import './App.css'
 import SignUpForm from './pages/SignUpForm';
+import axios from 'axios';
 
 
 type SaleData = {
@@ -63,6 +64,13 @@ type ProductProps = {
   onUpdate: (productId: string, updatedProduct: Product) => void;
   
 };
+interface ProductsProps {
+  fetchProducts: () => Promise<Product[]>;
+  createProduct: (product: Product) => Promise<void>;
+  deleteProduct: (id: string) => Promise<void>;
+  updateProduct: (id: string, newName: string, newPrice: number, newImage: string) => Promise<void>;
+}
+
 
 
 
@@ -127,6 +135,10 @@ const App: React.FC = () => {
     },
    
   ]);
+
+  const createProduct = (product: any) => Promise.resolve();
+  const deleteProduct = (id: string) => Promise.resolve();
+  const updateProduct = (id: string, newName: string, newPrice: number, newImage: string) => Promise.resolve();
 
   // Function to handle creating a new product
   const handleCreate = (newProduct: Product) => {
@@ -258,10 +270,24 @@ const handleDeleteCategory = (categoryId: string) => {
 />
 
         <Route path="/analytics" element={<Analytics saleData={saleData} />} />
+
+
         <Route
+        path="/product"
+        element={
+          <Products
+            fetchProducts={() => axios.get('/api/products').then((res) => res.data)}
+            createProduct={createProduct}
+            deleteProduct={deleteProduct}
+            updateProduct={updateProduct}
+          />
+        }
+      />
+
+        {/* <Route
   path="/product"
   element={<Products products={products} onCreate={handleCreate} onDelete={handleDelete} onUpdate={handleUpdate} />}
-/>
+/> */}
         <Route path="/shop" element={<ShopCard />} />
         <Route
         path="/orders"

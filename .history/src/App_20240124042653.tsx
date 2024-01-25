@@ -93,7 +93,7 @@ const App: React.FC = () => {
       id: '1',
       name: 'Laptop',
       price: 999,
-      image: 'https://img.ltwebstatic.com/images3_pi/2022/01/10/16417919016a32607182dd11dedeb77e8324b683e8_thumbnail_900x.webp',
+      image: 'laptop-image-url',
     },
     {
       id: '2',

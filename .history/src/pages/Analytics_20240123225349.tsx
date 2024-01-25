@@ -21,16 +21,12 @@ const Analytics: React.FC<AnalyticsProps> = ({ saleData }) => {
     alignItems: 'flex-end',
     height: '300px',
     marginTop: '20px',
-    gap:'12px',
-    border:'3px solid red',
   };
 
   const barStyle: React.CSSProperties = {
-    backgroundColor: 'black',
-
-    width: '30px',
+    backgroundColor: 'blue',
+    width: '40px',
     margin: '0 5px',
-    border:'3px solid blue',
   };
 
   return (
