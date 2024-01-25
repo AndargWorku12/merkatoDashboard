@@ -159,29 +159,29 @@ const App: React.FC = () => {
     setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
   };
 
-//  for AnalyticsPage
+
 // for category page
 
 
 const [categories, setCategories] = useState<CategoryType[]>([
   {
     id: '1',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
+    photo: 'https://example.com/photo1.jpg',
     name: 'Category 1',
   },
   {
     id: '2',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
+    photo: 'https://example.com/photo2.jpg',
     name: 'Category 2',
   },
   {
     id: '3',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
+    photo: 'https://example.com/photo3.jpg',
     name: 'Category 3',
   },
   {
     id: '4',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
+    photo: 'https://example.com/photo4.jpg',
     name: 'Category 4',
   },
 

@@ -15,8 +15,6 @@ import './App.css'
 import SignUpForm from './pages/SignUpForm';
 
 
-
-
 type SaleData = {
   date: string;
   amount: number;
@@ -36,16 +34,14 @@ type Product = {
 };
 
 type Order = {
-    id: string;
-    productName: string;
-    quantity: number;
-    totalPrice: number;
-  
+  id: string;
+  product: Product;
+  quantity: number;
+  totalPrice: number;
 };
 
 type CategoryType = {
   id: string;
-  photo:string;
   name: string;
 };
 
@@ -159,31 +155,21 @@ const App: React.FC = () => {
     setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
   };
 
-//  for AnalyticsPage
+
 // for category page
 
 
 const [categories, setCategories] = useState<CategoryType[]>([
-  {
-    id: '1',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 1',
-  },
-  {
-    id: '2',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 2',
-  },
-  {
-    id: '3',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 3',
-  },
-  {
-    id: '4',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 4',
-  },
+  { id: '1', name: 'Category 1' },
+  { id: '2', name: 'Category 2' },
+  { id: '3', name: 'Category 3' },
+  { id: '4', name: 'Category 4' },
+  { id: '5', name: 'Category 5' },
+  { id: '6', name: 'Category 6' },
+  { id: '7', name: 'Category 7' },
+  { id: '8', name: 'Category 8' },
+  { id: '9', name: 'Category 9' },
+  { id: '10', name: 'Category 10' },
 
 ]);
 
@@ -233,36 +219,22 @@ const handleDeleteCategory = (categoryId: string) => {
   
  
    const [orders, setOrders] = useState<Order[]>([
-    {
-      id: '1',
-      productName: 'Laptop',
-      quantity: 2,
-      totalPrice: 2000,
-    },
-    {
-      id: '2',
-      productName: 'Smartphone',
-      quantity: 3,
-      totalPrice: 1200,
-    },
-    {
-      id: '3',
-      productName: 'Headphones',
-      quantity: 1,
-      totalPrice: 100,
-    },
-    {
-      id: '4',
-      productName: 'Camera',
-      quantity: 1,
-      totalPrice: 800,
-    },
+    { id: '1', product: products[0], quantity: 2, totalPrice: 234 },
+    { id: '2', product: products[2], quantity: 1, totalPrice: 234 },
+    { id: '3', product: products[4], quantity: 3, totalPrice: 234 },
+    { id: '4', product: products[6], quantity: 2, totalPrice: 234 },
+    { id: '5', product: products[8], quantity: 1, totalPrice: 234 },
+    { id: '6', product: products[1], quantity: 2, totalPrice: 234 },
+    { id: '7', product: products[3], quantity: 3, totalPrice: 234 },
+    { id: '8', product: products[5], quantity: 1, totalPrice: 234 },
+    { id: '9', product: products[7], quantity: 2, totalPrice: 234 },
+    { id: '10', product: products[9], quantity: 1, totalPrice: 234 },
 
    ]);
 
   // Function to create a new order
   const handleCreateOrder = (newOrder: Order) => {
-    setOrders((prevOrders) => [...prevOrders, newOrder]);
+    setOrders([...orders, newOrder]);
   };
 
   // Function to delete an order
@@ -273,12 +245,8 @@ const handleDeleteCategory = (categoryId: string) => {
 
   // Function to update an order
   const handleUpdateOrder = (orderId: string, updatedOrder: Order) => {
-    // Placeholder implementation: Updating the order in the list
-    setOrders((prevOrders) =>
-      prevOrders.map((order) =>
-        order.id === orderId ? { ...order, ...updatedOrder } : order
-      )
-    );
+    const updatedOrders = orders.map(order => (order.id === orderId ? updatedOrder : order));
+    setOrders(updatedOrders);
   };
   
   return (
@@ -302,11 +270,11 @@ const handleDeleteCategory = (categoryId: string) => {
         path="/orders"
         element={
           <Orders
-  orders={orders}
-  onCreateOrder={handleCreateOrder}
-  onDeleteOrder={handleDeleteOrder}
-  onUpdateOrder={handleUpdateOrder}
-/>
+            orders={orders}
+            onCreateOrder={handleCreateOrder}
+            onDeleteOrder={handleDeleteOrder}
+            onUpdateOrder={handleUpdateOrder}
+          />
         }
       />
        

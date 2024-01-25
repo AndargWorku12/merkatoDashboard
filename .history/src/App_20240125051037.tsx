@@ -159,7 +159,7 @@ const App: React.FC = () => {
     setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
   };
 
-//  for AnalyticsPage
+
 // for category page
 
 

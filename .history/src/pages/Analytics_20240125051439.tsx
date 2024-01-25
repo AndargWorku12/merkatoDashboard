@@ -15,20 +15,14 @@ const Analytics: React.FC<AnalyticsProps> = ({ saleData }) => {
       <h2 className="text-3xl font-bold mb-4">Analytics Page</h2>
       <div className="flex justify-center items-end h-300 mt-6 gap-12 border-3 border-red-500">
         {saleData.map((data, index) => (
-          <Bar key={index} amount={data.amount} />
+          <div
+            key={index}
+            className="bg-black width-30px m-0 5px border-3 border-blue-500"
+            style={{ height: `${data.amount}px` }}
+          ></div>
         ))}
       </div>
     </div>
-  );
-};
-
-interface BarProps {
-  amount: number;
-}
-
-const Bar: React.FC<BarProps> = ({ amount }) => {
-  return (
-    <div className="bg-black w-12 m-0.5 border-3 border-blue-500" style={{ height: `${amount}px` }}></div>
   );
 };
 

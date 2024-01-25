@@ -45,7 +45,6 @@ type Order = {
 
 type CategoryType = {
   id: string;
-  photo:string;
   name: string;
 };
 
@@ -159,31 +158,21 @@ const App: React.FC = () => {
     setProducts((prevProducts) => prevProducts.filter((product) => product.id !== productId));
   };
 
-//  for AnalyticsPage
+
 // for category page
 
 
 const [categories, setCategories] = useState<CategoryType[]>([
-  {
-    id: '1',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 1',
-  },
-  {
-    id: '2',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 2',
-  },
-  {
-    id: '3',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 3',
-  },
-  {
-    id: '4',
-    photo: 'https://plus.unsplash.com/premium_photo-1661662850226-83c981ed4eba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wJTIwY29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
-    name: 'Category 4',
-  },
+  { id: '1', name: 'Category 1' },
+  { id: '2', name: 'Category 2' },
+  { id: '3', name: 'Category 3' },
+  { id: '4', name: 'Category 4' },
+  { id: '5', name: 'Category 5' },
+  { id: '6', name: 'Category 6' },
+  { id: '7', name: 'Category 7' },
+  { id: '8', name: 'Category 8' },
+  { id: '9', name: 'Category 9' },
+  { id: '10', name: 'Category 10' },
 
 ]);
 
@@ -302,11 +291,11 @@ const handleDeleteCategory = (categoryId: string) => {
         path="/orders"
         element={
           <Orders
-  orders={orders}
-  onCreateOrder={handleCreateOrder}
-  onDeleteOrder={handleDeleteOrder}
-  onUpdateOrder={handleUpdateOrder}
-/>
+            orders={orders}
+            onCreateOrder={handleCreateOrder}
+            onDeleteOrder={handleDeleteOrder}
+            onUpdateOrder={handleUpdateOrder}
+          />
         }
       />
        

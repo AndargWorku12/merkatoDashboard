@@ -9,34 +9,42 @@ interface Order {
 
 interface OrdersListProps {
   orders: Order[];
-  onCreateOrder: (newOrder: Order) => void;
-  onDeleteOrder: (orderId: string) => void;
-  onUpdateOrder: (orderId: string, updatedOrder: Order) => void;
+  onCreate: (newOrder: Omit<Order, 'id'> & { id?: string }) => void;
+  onDelete: (orderId: string) => void;
+  onUpdate: (orderId: string, newProductName: string, newQuantity: number, newTotalPrice: number) => void;
 }
 
-const Orders: React.FC<OrdersListProps> = ({ orders, onCreateOrder, onDeleteOrder, onUpdateOrder }) => {
+const Orders: React.FC<OrdersListProps> = ({ orders, onCreate, onDelete, onUpdate }) => {
   const [newOrder, setNewOrder] = useState<Omit<Order, 'id'> & { id?: string }>({
     productName: '',
     quantity: 0,
     totalPrice: 0,
   });
-
   const [editingOrder, setEditingOrder] = useState<Order | null>(null);
 
-  const handleCreateOrUpdateOrder = () => {
-    const orderDetails = editingOrder || newOrder;
+  const handleCreateOrder = () => {
+    onCreate({ ...newOrder, id: Date.now().toString() });
+    setNewOrder({
+      productName: '',
+      quantity: 0,
+      totalPrice: 0,
+    });
+  };
 
+  const handleUpdateOrder = () => {
     if (editingOrder) {
-      onUpdateOrder(editingOrder.id, orderDetails);
+      onUpdate(
+        editingOrder.id,
+        editingOrder.productName,
+        editingOrder.quantity,
+        editingOrder.totalPrice
+      );
       setEditingOrder(null);
-    } else {
-      onCreateOrder({ ...orderDetails, id: Date.now().toString() });
-      setNewOrder({ productName: '', quantity: 0, totalPrice: 0 });
     }
   };
 
   const handleDeleteOrder = (id: string) => {
-    onDeleteOrder(id);
+    onDelete(id);
   };
 
   const handleEditOrder = (order: Order) => {
@@ -44,11 +52,11 @@ const Orders: React.FC<OrdersListProps> = ({ orders, onCreateOrder, onDeleteOrde
   };
 
   return (
-    <div className="container mx-auto my-8 p-4 bg-white shadow-lg rounded-lg block gap-8 text-center">
+    <div className="container mx-auto my-8 p-4 bg-white shadow-lg rounded-lg block gap-64 text-center">
       <h2 className="text-3xl font-bold mb-4">Orders List</h2>
       <table className="w-full border border-cyan-700 w-max-80">
         <thead>
-          <tr className='bg-gray-800 text-white'>
+          <tr className=' bg-gray-800 text-white'>
             <th className="py-2">Product Name</th>
             <th className="py-2">Quantity</th>
             <th className="py-2">Total Price</th>
@@ -94,7 +102,9 @@ const Orders: React.FC<OrdersListProps> = ({ orders, onCreateOrder, onDeleteOrde
             placeholder='enter product name'
             value={editingOrder ? editingOrder.productName : newOrder.productName}
             onChange={(e) =>
-              setEditingOrder({ ...editingOrder, productName: e.target.value })
+              editingOrder
+                ? setEditingOrder({ ...editingOrder, productName: e.target.value })
+                : setNewOrder({ ...newOrder, productName: e.target.value })
             }
             className="mt-1 p-2 border-4 rounded w-full"
           />
@@ -109,7 +119,9 @@ const Orders: React.FC<OrdersListProps> = ({ orders, onCreateOrder, onDeleteOrde
             placeholder='enter quantity'
             value={editingOrder ? editingOrder.quantity : newOrder.quantity}
             onChange={(e) =>
-              setEditingOrder({ ...editingOrder, quantity: +e.target.value })
+              editingOrder
+                ? setEditingOrder({ ...editingOrder, quantity: +e.target.value })
+                : setNewOrder({ ...newOrder, quantity: +e.target.value })
             }
             className="mt-1 p-2 border-4 rounded w-full"
           />
@@ -124,14 +136,16 @@ const Orders: React.FC<OrdersListProps> = ({ orders, onCreateOrder, onDeleteOrde
             placeholder='enter total price'
             value={editingOrder ? editingOrder.totalPrice : newOrder.totalPrice}
             onChange={(e) =>
-              setEditingOrder({ ...editingOrder, totalPrice: +e.target.value })
+              editingOrder
+                ? setEditingOrder({ ...editingOrder, totalPrice: +e.target.value })
+                : setNewOrder({ ...newOrder, totalPrice: +e.target.value })
             }
             className="mt-1 p-2 border-4 rounded w-full"
           />
         </div>
       </div>
       <button
-        onClick={handleCreateOrUpdateOrder}
+        onClick={editingOrder ? handleUpdateOrder : handleCreateOrder}
         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
       >
         {editingOrder ? 'Update Order' : 'Create Order'}

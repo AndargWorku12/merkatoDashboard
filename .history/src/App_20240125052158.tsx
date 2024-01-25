@@ -160,6 +160,14 @@ const App: React.FC = () => {
   };
 
 //  for AnalyticsPage
+const sampleSaleData = [
+  { date: '2022-01-01', amount: 100 },
+  { date: '2022-01-02', amount: 150 },
+  { date: '2022-01-03', amount: 120 },
+  { date: '2022-01-04', amount: 200 },
+  { date: '2022-01-05', amount: 80 },
+];
+
 // for category page
 
 
@@ -292,7 +300,7 @@ const handleDeleteCategory = (categoryId: string) => {
         <Route path="/review"element={<CustemerReview username="John" joinedDate="2022-01-01" reviewDate="2022-01-15" reviewText="Lorem ipsum" />}
 />
 
-        <Route path="/analytics" element={<Analytics saleData={saleData} />} />
+        <Route path="/analytics" element={<Analytics saleData={sampleSaleData}  />} />
         <Route
   path="/product"
   element={<ProductList products={products} onCreate={handleCreate} onDelete={handleDelete} onUpdate={handleUpdate} />}

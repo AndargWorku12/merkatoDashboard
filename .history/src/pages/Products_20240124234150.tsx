@@ -64,7 +64,7 @@ const Products: React.FC<ProductProps> = ({
             <th className="py-2 px-4 border-b border-r font-bold">Image</th>
             <th className="py-2 px-4 border-b border-r font-bold">Name</th>
             <th className="py-2 px-4 border-b border-r font-bold">Price</th>
-            <th className="py-2 px-4 border-b font-bold">Actions</th>
+            <th className="py-2 px-4 border-b border-r font-bold">Actions</th>
           </tr>
         </thead>
         {/* Table body */}
@@ -86,15 +86,19 @@ const Products: React.FC<ProductProps> = ({
                   Delete
                 </button>
                 {/* Update input fields and button */}
+                <label>update here</label>
                 <input
                   type="text"
+                  placeholder='enter name'
                   value={newProductName}
                   onChange={(e) => setNewProductName(e.target.value)}
                   className="py-1 px-2 border font-bold"
                 />
                 <input
                   type="number"
+                  placeholder='enter price'
                   value={newProductPrice}
+                 
                   onChange={(e) => setNewProductPrice(Number(e.target.value))}
                   className="py-1 px-2 border font-bold"
                 />
